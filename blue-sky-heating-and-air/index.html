@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Blue Sky Heating and Air | HVAC in Austin, TX</title>
+<meta name="description" content="We are Blue Sky Heating and Air, a family-owned and operated HVAC company proudly serving Austin, TX for over 9 years. We believe every home deserves hones"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"/>
+<style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{margin:0;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    img{max-width:100%;display:block;}
+    .map-wrap{height:400px;position:relative;overflow:hidden;}
+    .map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(.3);}
+    .map-badge{position:absolute;top:20px;left:20px;background:#fff;padding:12px 18px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.12);}
+    .map-badge-title{font-weight:700;font-size:14px;color:#1f2937;}
+    .map-badge-sub{font-size:12px;color:#6b7280;margin-top:2px;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .contact-info-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+    .contact-info-icon{font-size:20px;flex-shrink:0;}
+    .contact-info-label{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    .form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+    .form-label{font-size:12px;font-weight:600;}
+    .form-input{padding:12px 15px;font-size:14px;outline:none;border-radius:0;font-family:inherit;width:100%;}
+    .form-textarea{padding:12px 15px;font-size:14px;outline:none;resize:vertical;min-height:100px;font-family:inherit;width:100%;}
+    .form-submit{width:100%;padding:15px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:inherit;letter-spacing:.5px;}
+    .contact-accent{padding:18px 22px;margin-top:24px;}
+    .contact-accent-title{font-size:13px;font-weight:700;margin-bottom:6px;}
+    .contact-accent-body{font-size:13px;line-height:1.6;opacity:.7;}
+    @media(max-width:768px){
+      .hero-grid,.cta-band{grid-template-columns:1fr!important;}
+      .hero-img-col,.fr-img-col{display:none!important;}
+      .foot-grid{grid-template-columns:1fr!important;}
+      .nav-links{display:none!important;}
+      .contact-grid,.form-row{grid-template-columns:1fr!important;}
+      .hero-copy,.section,.contact-section,.footer{padding-left:22px!important;padding-right:22px!important;}
+    }
+  
+    .site{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1f2937;}
+    .nav{background:#fff;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;border-bottom:1px solid #eaeff4;position:sticky;top:0;z-index:100;box-shadow:0 1px 12px rgba(0,0,0,.05);}
+    .nav-logo{font-size:19px;font-weight:800;color:#1f2937;letter-spacing:-.5px;}
+    .nav-links{display:flex;gap:26px;list-style:none;}
+    .nav-links a{font-size:14px;font-weight:500;color:#6b7280;text-decoration:none;}
+    .nav-cta{font-size:14px;font-weight:700;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;color:#fff;}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:82vh;align-items:center;padding:0 60px;gap:44px;position:relative;overflow:hidden;}
+    .hero-copy{position:relative;z-index:1;animation:fadeUp .7s both;}
+    .fr-pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.5px;padding:5px 13px;border-radius:100px;margin-bottom:20px;text-transform:uppercase;}
+    .hero-h1{font-size:clamp(42px,4.8vw,65px);font-weight:800;line-height:1.06;color:#1f2937;margin-bottom:20px;letter-spacing:-1px;}
+    .hero-body{font-size:16px;line-height:1.7;color:#6b7280;max-width:410px;margin-bottom:34px;}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+    .btn-primary{font-size:15px;font-weight:700;padding:14px 30px;border:none;border-radius:9px;cursor:pointer;color:#fff;}
+    .btn-secondary{font-size:14px;font-weight:600;padding:14px 22px;background:#fff;color:#374151;border:1.5px solid #e5e7eb;border-radius:9px;cursor:pointer;}
+    .hero-trust{display:flex;align-items:center;gap:18px;margin-top:40px;flex-wrap:wrap;}
+    .chip{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#6b7280;}
+    .chip::before{content:'✓';font-size:13px;font-weight:800;}
+    .fr-img-col{position:relative;z-index:1;animation:fadeIn .9s both;}
+    .fr-img-col img{width:100%;height:500px;object-fit:cover;border-radius:14px;box-shadow:0 20px 52px rgba(0,0,0,.13);}
+    .rating-badge{position:absolute;bottom:-16px;left:22px;background:#fff;border-radius:11px;padding:13px 18px;box-shadow:0 6px 26px rgba(0,0,0,.11);display:flex;align-items:center;gap:11px;}
+    .badge-star{font-size:17px;}
+    .badge-txt{font-size:13px;font-weight:700;color:#1f2937;}
+    .badge-sub{font-size:11px;color:#9ca3af;}
+    .section{padding:84px 60px;}
+    .section-alt{background:#f9fafb;}
+    .sec-lbl{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;padding:5px 13px;border-radius:100px;text-transform:uppercase;margin-bottom:12px;}
+    .sec-h2{font-size:clamp(30px,3.8vw,48px);font-weight:800;color:#1f2937;line-height:1.1;letter-spacing:-.5px;margin-bottom:44px;}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;}
+    .svc-card{background:#fff;border:1.5px solid #e8edf2;border-radius:13px;padding:26px 22px;cursor:default;transition:all .2s;}
+    .svc-icon{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px;}
+    .svc-name{font-size:16px;font-weight:700;color:#1f2937;margin-bottom:7px;}
+    .svc-desc{font-size:13px;color:#6b7280;line-height:1.6;}
+    .rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;}
+    .rv-card{background:#fff;border:1.5px solid #e8edf2;border-radius:13px;padding:26px;}
+    .rv-stars{font-size:15px;margin-bottom:12px;}
+    .rv-text{font-size:14px;line-height:1.7;color:#374151;font-style:italic;margin-bottom:16px;}
+    .rv-author{font-size:12px;font-weight:700;color:#9ca3af;}
+    .cta-band{padding:68px 60px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;}
+    .cta-h2{font-size:clamp(28px,3.3vw,46px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.5px;}
+    .cta-sub{font-size:14px;color:rgba(255,255,255,.72);margin-top:9px;}
+    .cta-btn{font-size:14px;font-weight:700;padding:16px 36px;background:#fff;border:none;border-radius:9px;cursor:pointer;white-space:nowrap;}
+    .contact-section{background:#f9fafb;padding:84px 60px;}
+    .contact-info-val{color:#1f2937;font-weight:600;font-size:15px;}
+    .contact-info-label{color:#6b7280;}
+    .form-label{color:#374151;}
+    .form-input,.form-textarea{background:#fff;border:1.5px solid #e5e7eb;color:#1f2937;}
+    .form-input::placeholder,.form-textarea::placeholder{color:#9ca3af;}
+    .contact-section-h2{font-size:clamp(30px,3.8vw,48px);font-weight:800;color:#1f2937;line-height:1.1;letter-spacing:-.5px;margin-bottom:44px;}
+    .footer{padding:48px 60px 26px;}
+    .foot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:38px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.07);}
+    .foot-logo{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:9px;}
+    .foot-tagline{font-size:13px;color:#4b5563;line-height:1.6;}
+    .foot-col-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;}
+    .foot-item{font-size:13px;color:#4b5563;margin-bottom:9px;}
+    .foot-bottom{display:flex;justify-content:space-between;font-size:11px;color:#374151;}
+    .foot-powered span{color:#5A6B46;}
+  
+    :root { --fc: #3B8BEB; }
+    .nav-logo-accent { color:#3B8BEB; }
+    .nav-cta  { background:#3B8BEB; }
+    .hero { background:linear-gradient(135deg,#3B8BEB10 0%,#2979d90c 100%); }
+    .fr-pill  { background:#3B8BEB18; color:#3B8BEB; }
+    .h1-accent { color:#3B8BEB; }
+    .chip::before { color:#3B8BEB; }
+    .btn-primary { background:#3B8BEB; box-shadow:0 4px 16px #3B8BEB3a; }
+    .badge-star { color:#3B8BEB; }
+    .sec-lbl  { background:#3B8BEB18; color:#3B8BEB; }
+    .svc-card:hover { border-color:#3B8BEB; }
+    .svc-icon { background:#3B8BEB18; }
+    .rv-stars { color:#3B8BEB; }
+    .cta-band { background:linear-gradient(135deg,#3B8BEB 0%,#2979d9 100%); }
+    .cta-btn  { color:#3B8BEB; }
+    .footer   { background:#111827; }
+    .foot-logo-accent { color:#3B8BEB; }
+    .contact-accent { background:#3B8BEB18; border-left:3px solid #3B8BEB; }
+    .contact-accent-title { color:#3B8BEB; }
+    .form-submit { background:#3B8BEB; color:#ffffff; border-radius:9px; }
+    .form-input,.form-textarea { border-radius:8px; }
+  </style>
+</head>
+<body>
+<div class="site">
+  <nav class="nav">
+    <div class="nav-logo">Blue Sky Heating and <span class="nav-logo-accent">Air</span></div>
+    <ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul>
+    <button class="nav-cta">Get a Free Quote</button>
+  </nav>
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="fr-pill">❄️ HVAC · Austin, TX</div>
+        <h1 class="hero-h1">Keeping Austin Cool, <span class="h1-accent">Comfortable &amp; Covered</span></h1>
+        <p class="hero-body">We are Blue Sky Heating and Air, a family-owned and operated HVAC company proudly serving Austin, TX for over 9 years. We believe every home deserves honest work, fair prices, and technicians who treat you like a neighbor. From routine tune-ups to same-day emergency repairs, we're here when you need us most.</p>
+        <div class="hero-actions"><button class="btn-primary">Get a Free Quote</button><button class="btn-secondary">(512) 222-6666</button></div>
+        <div class="hero-trust"><div class="chip">Licensed &amp; Insured</div><div class="chip">Same-Day Emergency Service</div><div class="chip">Free Instant Online Estimates</div></div>
+      </div>
+      <div class="fr-img-col">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80" alt="Blue Sky Heating and Air"/>
+        <div class="rating-badge"><div class="badge-star">★</div><div><div class="badge-txt">4.7 out of 5</div><div class="badge-sub">410+ happy customers</div></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="services" class="section section-alt"><div class="sec-lbl">What We Offer</div><h2 class="sec-h2">Our Services</h2><div class="svc-grid"><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">AC Installation</div><div class="svc-desc">Beat the Texas heat with a new, energy-efficient air conditioning system installed by our certified technicians. We'll help you choose the right unit for your home and budget.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">AC Repair</div><div class="svc-desc">When your AC goes out in the Austin summer, every minute counts. Our technicians diagnose and fix the problem fast, getting your home cool and comfortable again.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Heating Installation</div><div class="svc-desc">Stay warm all winter long with a professional heating system installation tailored to your home's needs. We carry top-rated systems built for reliability and efficiency.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Heating Repair</div><div class="svc-desc">Don't tough out a cold night with a broken heater. We provide prompt, dependable heating repairs to restore your comfort quickly and affordably.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Heat Pump Installation &amp; Repair</div><div class="svc-desc">Heat pumps offer year-round comfort and energy savings. Whether you need a new system installed or an existing one repaired, our team has you covered.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Furnace Repair &amp; Replacement</div><div class="svc-desc">From minor furnace fixes to full system replacements, we deliver honest assessments and quality workmanship so you can trust the heat will be there when you need it.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">HVAC Maintenance &amp; Tune-Ups</div><div class="svc-desc">Regular maintenance extends the life of your system and keeps it running at peak efficiency. Our thorough tune-ups help prevent costly breakdowns before they happen.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Air Filtration &amp; Purification</div><div class="svc-desc">Breathe cleaner, healthier air at home. We install advanced air filtration and purification systems that reduce allergens, dust, and airborne contaminants.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Duct Repair &amp; Sealing</div><div class="svc-desc">Leaky ducts waste energy and compromise comfort. We inspect, seal, and repair your ductwork to ensure your conditioned air reaches every corner of your home.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Indoor Air Quality</div><div class="svc-desc">Your home's air quality matters. We test and improve your indoor environment with solutions designed to reduce pollutants, humidity issues, and airborne irritants.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Same-Day Emergency HVAC Repair</div><div class="svc-desc">HVAC emergencies don't wait for a convenient time, and neither do we. We offer same-day emergency service to get your system back up and running without delay.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Free Home Energy Assessment</div><div class="svc-desc">Wondering why your energy bills are so high? Our free home energy assessment identifies inefficiencies in your HVAC system and helps you save money year-round.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">HVAC Service Plans / Maintenance Agreements</div><div class="svc-desc">Protect your investment with one of our affordable maintenance agreements. Priority scheduling, routine inspections, and peace of mind — all in one simple plan.</div></div><div class="svc-card"><div class="svc-icon">❄️</div><div class="svc-name">Instant Online Estimates</div><div class="svc-desc">No waiting, no guessing. Get a transparent, no-obligation estimate online in minutes so you can make confident decisions about your home's comfort.</div></div></div></section>
+  <section id="reviews" class="section"><div class="sec-lbl">What Clients Say</div><h2 class="sec-h2">People Love Working With Us</h2><div class="rv-grid"><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">"Family owned and operated with honest and friendly technicians — excellent customer service and prices. This is the kind of company you feel good calling."</div><div class="rv-author">— Sarah M.</div></div><div class="rv-card"><div class="rv-stars">★★★★★</div><div class="rv-text">"Blue Sky was critical when both AC units in my new home died in July. They got out same-day and had me on the schedule for replacements fast. Absolute lifesavers."</div><div class="rv-author">— James R.</div></div></div></section>
+  <div class="cta-band"><div><div class="cta-h2">Let's Get Your Project<br/>Off the Ground.</div><div class="cta-sub">Proudly serving Austin, TX and surrounding communities.</div></div><button class="cta-btn">Call (512) 222-6666</button></div>
+  
+    <div class="map-wrap">
+      <iframe title="Service Area" src="https://www.openstreetmap.org/export/embed.html?bbox=-97.9,30.1,-97.5,30.5&layer=mapnik" loading="lazy"></iframe>
+      <div class="map-badge">
+        <div class="map-badge-title">📍 Serving Austin, TX</div>
+        <div class="map-badge-sub">and surrounding areas</div>
+      </div>
+    </div>
+    <section id="contact" class="contact-section">
+      <div class="sec-lbl" style="display:inline-block">Get In Touch</div>
+      <div class="sec-ey" style="display:none">Contact Us</div>
+      <h2 class="contact-section-h2">Request a Free Estimate</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-item"><div class="contact-info-icon">📞</div><div><div class="contact-info-label">Phone</div><div class="contact-info-val">(512) 222-6666</div></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon">✉️</div><div><div class="contact-info-label">Email</div><div class="contact-info-val">dispatch@blueskyheatingandair.net</div></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon">📍</div><div><div class="contact-info-label">Address</div><div class="contact-info-val">5900 Balcones Dr, Ste 5090, Austin, TX 78731</div></div></div>
+          <div class="contact-info-item"><div class="contact-info-icon">🕐</div><div><div class="contact-info-label">Hours</div><div class="contact-info-val">Mon–Sat: 7am–7pm · Emergency: 24/7</div></div></div>
+          <div class="contact-accent"><div class="contact-accent-title">Response Guarantee</div><div class="contact-accent-body">We respond to all requests within 2 hours. Emergency calls answered 24/7.</div></div>
+        </div>
+        <div id="contact-form">
+          <div class="form-row">
+            <div class="form-field"><label class="form-label">Full Name</label><input class="form-input" placeholder="John Smith"/></div>
+            <div class="form-field"><label class="form-label">Phone</label><input class="form-input" placeholder="(512) 000-0000"/></div>
+          </div>
+          <div class="form-field"><label class="form-label">Email</label><input class="form-input" placeholder="you@email.com"/></div>
+          <div class="form-field"><label class="form-label">How can we help?</label><textarea class="form-textarea" placeholder="Describe your project..."></textarea></div>
+          <button class="form-submit" onclick="document.getElementById('contact-form').style.display='none';document.getElementById('contact-thanks').style.display='block'">Send My Request →</button>
+        </div>
+        <div id="contact-thanks" style="display:none;text-align:center;padding:40px 20px;">
+          <div style="font-size:40px;margin-bottom:16px">✅</div>
+          <div style="font-size:18px;font-weight:700;margin-bottom:8px">Request Sent!</div>
+          <div style="font-size:14px;opacity:.6">We'll be in touch within 2 hours.</div>
+        </div>
+      </div>
+    </section>
+  <footer class="footer"><div class="foot-grid"><div><div class="foot-logo">Blue Sky Heating and <span class="foot-logo-accent">Air</span></div><div class="foot-tagline">HVAC you can count on in Austin, TX.</div></div><div><div class="foot-col-title">Get In Touch</div><div class="foot-item">📞 (512) 222-6666</div> <div class="foot-item">✉ dispatch@blueskyheatingandair.net</div></div><div><div class="foot-col-title">Services</div><div class="foot-item">— AC Installation</div><div class="foot-item">— AC Repair</div><div class="foot-item">— Heating Installation</div><div class="foot-item">— Heating Repair</div><div class="foot-item">— Heat Pump Installation &amp; Repair</div></div></div><div class="foot-bottom"><div>© 2026 Blue Sky Heating and Air. All rights reserved.</div><div class="foot-powered">Built by <span>SITEWORK</span></div></div></footer>
+</div>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});
+});
+</script>
+</body>
+</html>
