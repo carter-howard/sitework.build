@@ -530,42 +530,87 @@ function buildPlainEnglish(d) {
   const crawl = d.prospectCrawl || {};
   const p = d.prospect || {};
   const ps = d.comparison?.prospect || {};
+  const ca = d.comparison?.competitorAverage || {};
   const wins = [];
   const gapsOut = [];
 
-  // Wins
+  // ── Wins ──────────────────────────────────────────────────────────────────
   if (p.rating >= 4.5 && p.reviewCount >= 50)
-    wins.push({ t: `${p.rating}★ across ${p.reviewCount.toLocaleString()} reviews`, d: "Customers clearly love your work. That reputation is your biggest asset." });
+    wins.push({ t: `${p.rating}★ across ${p.reviewCount.toLocaleString()} reviews`, d: "Customers clearly love your work. That reputation is your single biggest asset for winning local search." });
+  else if (p.rating >= 4.0 && p.reviewCount >= 20)
+    wins.push({ t: `${p.rating}★ rating with ${p.reviewCount} reviews`, d: "Solid reputation. The next step is making sure it's visible every time someone searches your trade." });
   if (crawl.hasPhoneLink)
-    wins.push({ t: "Click-to-call works on mobile", d: "Customers on their phone can reach you in one tap." });
+    wins.push({ t: "Click-to-call works on mobile", d: "Customers on their phone can reach you in one tap — no copying numbers, no friction." });
   if (crawl.hasBookingWidget)
-    wins.push({ t: "Online booking is set up", d: "Customers can schedule without calling — a big convenience edge." });
+    wins.push({ t: "Online booking is set up", d: "Customers can schedule without calling. That's a real edge, especially for after-hours searches." });
   if (crawl.hasSchema)
-    wins.push({ t: "Google can read your site structure", d: "Your site speaks Google's language, which helps you show up in results." });
+    wins.push({ t: "Google can read your site structure", d: "Schema markup is how Google understands your services and location. You have it — most competitors don't." });
   if (p.hours?.length >= 7)
-    wins.push({ t: "Business hours fully listed", d: "Customers know exactly when they can reach you." });
+    wins.push({ t: "Business hours fully listed on Google", d: "Customers know exactly when they can reach you. It's a small thing that filters out a lot of missed calls." });
   if (crawl.hasEmergencyText)
-    wins.push({ t: "Emergency availability is visible", d: "Urgent jobs are the most profitable — and you're signaling you take them." });
+    wins.push({ t: "Emergency availability is visible on your site", d: "Urgent jobs are the most profitable — and you're already signaling you take them." });
+  if (crawl.hasLicenseNumber || crawl.hasBBBLink)
+    wins.push({ t: "License or credentials shown", d: "Homeowners letting a stranger into their house need proof. You're already building that trust before the first call." });
+  if (p.photoCount >= 15)
+    wins.push({ t: `${p.photoCount} photos on your Google profile`, d: "Strong photo presence. Profiles with real job photos get significantly more calls than those without." });
+  if (crawl.hasFacebook)
+    wins.push({ t: "Facebook presence linked", d: "Social citations strengthen your local SEO footprint and give customers a second place to verify you're legit." });
 
-  // Gaps — each with a real-world cost
+  // ── GBP gaps ───────────────────────────────────────────────────────────────
   if (!p.website)
-    gapsOut.push({ t: "No website found on your Google profile", d: "When customers want to verify you're legit before calling, there's nothing to find. Most will call the next name on the list." });
-  if (p.website && !crawl.hasBookingWidget)
-    gapsOut.push({ t: "No online booking", d: "Customers searching at 9pm can't schedule with you — but they can with competitors who have booking. That job is gone by morning." });
-  if (p.website && !crawl.hasPhoneLink)
-    gapsOut.push({ t: "Phone number isn't tappable on mobile", d: "Most local searches happen on phones. If they can't tap to call, you're adding friction at the exact moment they decided to hire you." });
-  if (!crawl.hasLicenseNumber && !crawl.hasBBBLink)
-    gapsOut.push({ t: "License and credentials not shown", d: "Homeowners letting a stranger into their house want proof you're licensed and insured. Showing it builds trust before the first call." });
-  if (p.website && !crawl.hasSchema)
-    gapsOut.push({ t: "Site is invisible to Google's deeper search features", d: "Schema markup is how Google understands your services and area. Without it, competitors take map and search placements you should own." });
-  if (p.photoCount < 10)
-    gapsOut.push({ t: `Only ${p.photoCount} photos on your Google profile`, d: "Profiles with more photos get significantly more calls and direction requests. Real job photos build instant trust." });
-  if (crawl.crawled && crawl.trustKeywords < 2)
-    gapsOut.push({ t: "Trust language missing from your site", d: "Words like 'licensed', 'insured', and 'family owned' are what homeowners scan for. Your site barely uses them." });
-  if (p.website && !crawl.hasFinancing)
-    gapsOut.push({ t: "No financing options mentioned", d: "Big-ticket jobs often hinge on payment flexibility. Competitors offering financing win the jobs you quote but don't close." });
+    gapsOut.push({ t: "No website on your Google profile", d: "When someone searches your business and clicks through, there's nothing to find. Most won't call — they'll click the next name that has a site." });
+  if (p.photoCount < 5)
+    gapsOut.push({ t: `Only ${p.photoCount} photo${p.photoCount === 1 ? "" : "s"} on your Google profile`, d: "Google profiles with more photos get 35% more clicks and far more direction requests. Real job photos are the fastest trust-builder you have." });
+  else if (p.photoCount < 15)
+    gapsOut.push({ t: `${p.photoCount} photos on Google — room to grow`, d: "Competitors with 20+ job photos significantly outperform on clicks and calls. A monthly habit of uploading 3-4 photos makes a measurable difference." });
+  if (!p.hours?.length)
+    gapsOut.push({ t: "Business hours not listed on Google", d: "Customers searching at 7pm don't know if you're available. Missing hours is a trust gap that sends them to someone who has theirs posted." });
+  if (p.reviewCount < 30)
+    gapsOut.push({ t: `${p.reviewCount} reviews — below the local threshold for trust`, d: "Most homeowners won't hire a contractor with fewer than 20-30 reviews. A simple follow-up text after each job doubles your review velocity in 60 days." });
+  else if (ca.reputation && ps.reputation < ca.reputation - 10)
+    gapsOut.push({ t: "Review count behind local competitors", d: `Your market average is ${d.comparison?.avgReviews?.toLocaleString() || "higher"} reviews. The gap is closeable — most contractors just never ask.` });
 
-  return { wins: wins.slice(0, 4), gaps: gapsOut.slice(0, 4) };
+  // ── Website conversion gaps ───────────────────────────────────────────────
+  if (p.website && !crawl.hasBookingWidget)
+    gapsOut.push({ cat: "Website", t: "No online booking on your site", d: "Customers searching at 9pm can't schedule with you — but they can with competitors who have booking. That job is gone before you wake up." });
+  if (p.website && !crawl.hasPhoneLink)
+    gapsOut.push({ cat: "Website", t: "Phone number isn't tappable on mobile", d: "Most local searches happen on phones. If tapping your number doesn't auto-dial, you're losing calls at the exact moment someone decided to hire you." });
+  if (p.website && !crawl.hasForm)
+    gapsOut.push({ cat: "Website", t: "No contact form on your site", d: "Some customers won't call — they want to send a message first. Without a form, you're invisible to that segment entirely." });
+  if (!crawl.hasLicenseNumber && !crawl.hasBBBLink)
+    gapsOut.push({ cat: "Trust", t: "License and credentials not visible", d: "Homeowners letting a stranger into their house scan for proof you're licensed and insured. Without it visible, the hesitation often costs you the job." });
+  if (p.website && !crawl.hasFinancing)
+    gapsOut.push({ cat: "Website", t: "No financing options mentioned", d: "Big-ticket jobs — new HVAC, repiping, full electrical — often hinge on payment flexibility. Competitors who offer financing win the quotes you lose." });
+  if (p.website && !crawl.hasEmergencyText)
+    gapsOut.push({ cat: "Website", t: "Emergency availability not mentioned", d: "Emergency calls are the highest-margin jobs in your trade. If your site doesn't say you're available, customers in a panic call whoever does." });
+
+  // ── SEO gaps ─────────────────────────────────────────────────────────────
+  if (p.website && !crawl.hasSchema)
+    gapsOut.push({ cat: "SEO", t: "Google can't fully read your site", d: "Schema markup tells Google exactly what services you offer and where. Without it, competitors who have it outrank you for searches you should be winning." });
+  if (crawl.crawled && crawl.pagesCrawled < 2)
+    gapsOut.push({ cat: "SEO", t: "Site appears to be a single page", d: "Single-page sites can only rank for one thing. Competitors with separate pages for each service capture far more searches." });
+  if (crawl.crawled && crawl.serviceKeywords < 4)
+    gapsOut.push({ cat: "SEO", t: "Service content is too thin to rank", d: "Google ranks pages, not businesses. If your site doesn't have enough content about each service, you won't show up when someone searches that specific job." });
+  if (crawl.crawled && crawl.textLength < 3000)
+    gapsOut.push({ cat: "SEO", t: "Not enough content for Google to work with", d: "Thin sites can't compete for local search rankings. Google needs context about your services, area, and expertise to send you traffic." });
+  if (crawl.crawled && crawl.trustKeywords < 2)
+    gapsOut.push({ cat: "Trust", t: "Trust language missing from your site", d: "Words like 'licensed', 'insured', 'family owned', and 'guaranteed' are what homeowners scan for before calling. They also boost local SEO." });
+  if (p.website && p.website.startsWith("http:"))
+    gapsOut.push({ cat: "SEO", t: "Site not running on HTTPS", d: "Google flags non-HTTPS sites as 'Not secure'. That warning appears before customers read a single word — and most leave immediately." });
+
+  // ── Social & citation gaps ────────────────────────────────────────────────
+  if (!crawl.hasFacebook)
+    gapsOut.push({ cat: "Social", t: "No Facebook presence found", d: "Facebook is still where homeowners ask for contractor recommendations. No presence means you're invisible in those conversations." });
+  if (!crawl.hasInstagram)
+    gapsOut.push({ cat: "Social", t: "No Instagram linked", d: "Before/after photos on Instagram are one of the highest-converting content formats for trades. Competitors posting job photos are building audiences you're not reaching." });
+  if (!crawl.hasYelp)
+    gapsOut.push({ cat: "Social", t: "No Yelp presence detected", d: "Yelp still drives significant contractor searches and is a citation that strengthens your overall local SEO footprint." });
+
+  // Sort by category priority, cap at 6
+  const catOrder = { "GBP": 0, "Website": 1, "SEO": 2, "Trust": 3, "Social": 4 };
+  gapsOut.sort((a, b) => (catOrder[a.cat] ?? 5) - (catOrder[b.cat] ?? 5));
+
+  return { wins: wins.slice(0, 5), gaps: gapsOut.slice(0, 6) };
 }
 
 function CustomerApp() {
@@ -597,10 +642,31 @@ function CustomerApp() {
     finally { setLoading(false); }
   }, [url]);
 
-  const unlock = useCallback(() => {
+  const unlock = useCallback(async () => {
     if (!email.trim() || !email.includes("@")) return;
-    console.log("[SITEWORK LEAD] email:", email.trim(), "| business:", data?.prospect?.name, "| url:", url.trim());
-    setEmailGated(true);
+    setEmailGated(true); // show results immediately, don't make them wait
+
+    // Fire-and-forget lead capture to Web3Forms
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "6282a64b-adda-4bbf-bea4-ad946332e211",
+          subject: `New Scan Lead — ${data?.prospect?.name || "Unknown"}`,
+          name: data?.prospect?.name || "Contractor",
+          email: email.trim(),
+          message: `Business: ${data?.prospect?.name || "—"}
+Address: ${data?.prospect?.address || "—"}
+Reviews: ${data?.prospect?.reviewCount || "—"} · ${data?.prospect?.rating || "—"}★
+GBP URL: ${url.trim()}
+Overall Grade: ${gradeFor(data?.comparison?.prospect?.overall ?? 0)}
+Scanned: ${new Date().toLocaleString()}`,
+        }),
+      });
+    } catch (_) {
+      // non-fatal — lead already unlocked above
+    }
   }, [email, data, url]);
 
   const p = data?.prospect || {};
@@ -701,12 +767,19 @@ function CustomerApp() {
             {/* Gaps */}
             {plain.gaps.length > 0 && (
               <Section title="Where jobs are slipping away">
-                {plain.gaps.map((g, i) => (
-                  <div key={i} style={{ background: "#1E0808", border: `1px solid ${C.red}33`, borderRadius: 6, padding: "12px 16px", marginBottom: 8 }}>
-                    <div style={{ color: C.text, fontSize: 13, fontWeight: 700, marginBottom: 3 }}>✕ {g.t}</div>
-                    <div style={{ color: C.muted, fontSize: 12, lineHeight: 1.6 }}>{g.d}</div>
-                  </div>
-                ))}
+                {plain.gaps.map((g, i) => {
+                  const catColors = { Website: "#3A6BC4", SEO: "#7A4FA3", Trust: "#C47A3A", Social: "#3A9C7A", GBP: C.green };
+                  const catColor = catColors[g.cat] || C.dim;
+                  return (
+                    <div key={i} style={{ background: "#1E0808", border: `1px solid ${C.red}33`, borderRadius: 6, padding: "12px 16px", marginBottom: 8 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                        <span style={{ color: C.text, fontSize: 13, fontWeight: 700 }}>✕ {g.t}</span>
+                        {g.cat && <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", background: `${catColor}22`, border: `1px solid ${catColor}55`, borderRadius: 3, color: catColor, padding: "2px 6px", flexShrink: 0 }}>{g.cat}</span>}
+                      </div>
+                      <div style={{ color: C.muted, fontSize: 12, lineHeight: 1.6 }}>{g.d}</div>
+                    </div>
+                  );
+                })}
               </Section>
             )}
 
