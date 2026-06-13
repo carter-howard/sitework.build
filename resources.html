@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources for Contractors — Guides, Strategy & Free Tools | SITEWORK</title>
+<meta name="description" content="Free guides and straight-talk strategy for trades contractors: how to get more customers, why good contractors lose jobs to bad ones, and a free digital presence audit.">
+
+<link rel="canonical" href="https://sitework.build/resources">
+
+<meta property="og:title" content="Resources for Contractors — Guides, Strategy & Free Tools">
+<meta property="og:description" content="Free guides and straight-talk strategy for trades contractors, from Sitework.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sitework.build/resources">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Sitework Resources",
+  "url": "https://sitework.build/resources",
+  "description": "Guides and strategy for trades contractors on visibility, trust, and growth."
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.rs-hero { position:relative; padding:170px 0 80px; overflow:hidden; }
+.rs-hero .hero-bg { position:absolute; inset:0; }
+.rs-hero-inner { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 40px; }
+.rs-h1 { font-size:clamp(2.8rem,5.5vw,4.6rem); line-height:1; margin-bottom:20px; }
+.rs-h1 em { font-style:normal; color:var(--green); }
+.rs-sub { font-size:1rem; color:#999; max-width:560px; line-height:1.8; font-weight:300; }
+.rs-list { padding:80px 0 120px; }
+.rs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+.rs-card { background:var(--black); padding:40px 32px; display:flex; flex-direction:column; position:relative; overflow:hidden; transition:background 0.2s; }
+.rs-card:hover { background:var(--dark); }
+.rs-card::after { content:''; position:absolute; top:0; left:0; height:2px; width:100%; background:var(--green-light);
+  transform:scaleX(0); transform-origin:left; transition:transform 0.45s cubic-bezier(0.22,1,0.36,1); }
+.rs-card:hover::after { transform:scaleX(1); }
+.rs-tag { display:inline-block; align-self:flex-start; font-size:0.6rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--green-light); border:1px solid rgba(90,107,70,0.45); padding:5px 10px; margin-bottom:20px; }
+.rs-card h2 { font-size:1.5rem; line-height:1.15; margin-bottom:12px; }
+.rs-card p { font-size:0.88rem; line-height:1.7; font-weight:300; flex:1; margin-bottom:20px; }
+.rs-card .meta { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:#666; font-weight:600; margin-bottom:16px; }
+.rs-link { color:var(--green-light); text-decoration:none; font-size:0.82rem; font-weight:600; letter-spacing:0.06em; transition:letter-spacing 0.25s; }
+.rs-card:hover .rs-link { letter-spacing:0.1em; }
+@media (max-width:1024px) { .rs-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:680px) { .rs-grid { grid-template-columns:1fr; } .rs-hero { padding:140px 0 60px; } }
+@media (prefers-reduced-motion: reduce) { .rs-card::after { transition:none; } }
+</style>
+</head>
+<body>
+
+<!-- NAV (shared) -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-horizontal.png" alt="Sitework" class="nav-logo-img" width="200" height="40">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="why-sitework.html">Why Sitework</a>
+      <a href="resources.html">Resources</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#services" onclick="closeMobile()">Services</a>
+    <a href="index.html#approach" onclick="closeMobile()">Approach</a>
+    <a href="why-sitework.html" onclick="closeMobile()">Why Sitework</a>
+    <a href="resources.html" onclick="closeMobile()">Resources</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="index.html#contact" onclick="closeMobile()" class="mobile-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="rs-hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+  </div>
+  <div class="rs-hero-inner">
+    <div class="section-label">Resources</div>
+    <h1 class="rs-h1">Straight talk for the trades. <em>No fluff, no gatekeeping.</em></h1>
+    <p class="rs-sub">Everything here is free and written from a decade working with thousands of contractors. Take it, use it, build with it — and if you'd rather have someone run the playbook for you, you know where to find me.</p>
+  </div>
+</section>
+
+<!-- LIST -->
+<section class="rs-list">
+  <div class="container">
+    <div class="rs-grid">
+      <div class="rs-card">
+        <span class="rs-tag">Guide</span>
+        <div class="meta">June 2026 · 12 min read</div>
+        <h2>How HVAC Companies Get More Customers in 2026</h2>
+        <p>The complete playbook: the map pack, reviews, a website that converts, seasonality strategy, and the honest truth about paid leads. Written for owners, not marketers.</p>
+        <a href="how-hvac-companies-get-more-customers.html" class="rs-link">Read the Guide →</a>
+      </div>
+      <div class="rs-card">
+        <span class="rs-tag">Strategy</span>
+        <div class="meta">June 2026 · 7 min read</div>
+        <h2>Why Good Contractors Lose Jobs to Bad Ones</h2>
+        <p>It's not your work. It's the visibility gap — and it has three parts: being found, being trusted, and being first. Here's how each one quietly costs you jobs, and how to close it.</p>
+        <a href="why-good-contractors-lose-jobs.html" class="rs-link">Read the Article →</a>
+      </div>
+      <div class="rs-card">
+        <span class="rs-tag">Guide</span>
+        <div class="meta">Coming soon — request early access</div>
+        <h2>The Contractor's Digital Presence Checklist</h2>
+        <p>Everything your business needs to become the obvious choice online — a complete 100+ point checklist. In the works now; ask and you'll get it first.</p>
+        <a href="index.html#contact" class="rs-link">Request the Checklist →</a>
+      </div>
+      <div class="rs-card">
+        <span class="rs-tag">Free Audit</span>
+        <div class="meta">Free · No strings</div>
+        <h2>Free Digital Presence Audit</h2>
+        <p>We'll review your website, Google Business Profile, and reviews — and show you exactly where you're leaving money on the table. Honest read, no pitch attached.</p>
+        <a href="index.html#contact" class="rs-link">Request Your Audit →</a>
+      </div>
+      <div class="rs-card">
+        <span class="rs-tag">Demo</span>
+        <div class="meta">Free · Built before we talk</div>
+        <h2>See Your New Website Before You Pay</h2>
+        <p>The Sitework way: tell us your company and city, and we'll build a working demo of your new website before our first conversation. Judge the work, not the pitch.</p>
+        <a href="index.html#contact" class="rs-link">Get Your Free Demo →</a>
+      </div>
+      <div class="rs-card">
+        <span class="rs-tag">Story</span>
+        <div class="meta">From the founder</div>
+        <h2>Why Sitework Exists</h2>
+        <p>Ten-plus years inside the trades, thousands of contractors, one pattern worth building a company on. The story, told straight.</p>
+        <a href="why-sitework.html" class="rs-link">Read the Story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="Boxlogo-white.png" alt="Sitework" class="footer-logo-img" width="32" height="32">
+          <span>SITEWORK</span>
+        </div>
+        <p>Visibility. Trust. Growth.</p>
+        <p class="footer-desc">Helping hardworking businesses become the obvious choice in their market.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="index.html#services">Web Design</a>
+          <a href="index.html#services">Local SEO</a>
+          <a href="index.html#services">Google Business Profile</a>
+          <a href="index.html#services">Reputation Management</a>
+          <a href="index.html#services">Growth Strategy</a>
+          <a href="index.html#services">Consulting &amp; Coaching</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#approach">Our Approach</a>
+          <a href="why-sitework.html">Why Sitework</a>
+          <a href="resources.html">Resources</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Trades We Serve</h5>
+          <a href="hvac-website-design.html">HVAC</a>
+          <a href="plumber-website-design.html">Plumbing</a>
+          <a href="electrician-website-design.html">Electrical</a>
+          <a href="roofing-website-design.html">Roofing</a>
+          <a href="construction-website-design.html">Construction</a>
+          <a href="home-services-website-design.html">Home Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <p>© 2026 Sitework. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="tel:+17038198946">703.819.8946</a>
+        <a href="mailto:carter@sitework.build">carter@sitework.build</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rs-card, .rs-hero-inner').forEach(el => { el.classList.add('fade-up'); obs.observe(el); });
+});
+</script>
+</body>
+</html>

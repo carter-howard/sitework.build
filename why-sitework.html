@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Sitework — A Decade Inside the Trades | SITEWORK</title>
+<meta name="description" content="Sitework was built on ten years working with thousands of trades contractors — watching what separates the companies that win work from the ones that stay invisible. Here's the story, from founder Carter.">
+
+<link rel="canonical" href="https://sitework.build/why-sitework">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Why Sitework — A Decade Inside the Trades">
+<meta property="og:description" content="Ten years, thousands of contractors, one pattern: the best company in town is too often the best-kept secret. Sitework exists to fix that.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sitework.build/why-sitework">
+
+<!-- Schema: AboutPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Why Sitework",
+  "url": "https://sitework.build/why-sitework",
+  "description": "The story behind Sitework: a decade working with thousands of trades contractors, and the playbook learned from watching who wins.",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "Sitework",
+    "url": "https://sitework.build",
+    "founder": { "@type": "Person", "name": "Carter" },
+    "areaServed": "United States"
+  }
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── WHY SITEWORK — editorial page styles (ws- prefix) ── */
+.ws-hero { position:relative; min-height:78vh; display:flex; align-items:center; padding-top:72px; overflow:hidden; }
+.ws-hero-inner { position:relative; z-index:1; max-width:980px; margin:0 auto; padding:90px 40px 70px; }
+.ws-eyebrow { display:inline-block; background:rgba(90,107,70,0.15); border:1px solid rgba(90,107,70,0.4); color:var(--green-light);
+  font-size:0.68rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; padding:8px 16px; margin-bottom:30px; }
+.ws-h1 { font-size:clamp(3rem,6.5vw,5.6rem); line-height:0.98; margin-bottom:30px; max-width:18ch; }
+.ws-h1 em { font-style:normal; color:var(--green); }
+.ws-hero-sub { font-size:1.08rem; color:#999; max-width:560px; line-height:1.8; font-weight:300; }
+.ws-hero-sub strong { color:var(--light); font-weight:500; }
+
+/* Story prose */
+.ws-story { padding:110px 0; border-top:1px solid var(--border); }
+.ws-prose { max-width:680px; margin:0 auto; }
+.ws-prose .section-label { margin-bottom:24px; }
+.ws-prose h2 { font-size:clamp(1.9rem,3.4vw,2.7rem); margin:0 0 26px; line-height:1.08; }
+.ws-prose p { font-size:1rem; line-height:1.9; font-weight:300; margin-bottom:26px; color:var(--text); }
+.ws-prose p strong { color:var(--white); font-weight:600; }
+.ws-prose p:first-of-type::first-letter { font-family:'Bebas Neue',sans-serif; font-size:3.6em; line-height:0.8;
+  float:left; padding:6px 12px 0 0; color:var(--green-light); }
+
+/* Big pull quote */
+.ws-pull { border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin:60px 0; padding:48px 0; text-align:center; }
+.ws-pull .q { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.08; color:var(--white); letter-spacing:0.03em; }
+.ws-pull .q em { font-style:normal; color:var(--green); }
+.ws-pull .a { margin-top:18px; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:#666; font-weight:600; }
+
+/* Inline pull (smaller, left rule) */
+.ws-aside { border-left:3px solid var(--green); padding:8px 0 8px 26px; margin:42px 0;
+  font-family:'Bebas Neue',sans-serif; font-size:1.6rem; line-height:1.2; color:var(--white); letter-spacing:0.03em; }
+
+/* Pattern list */
+.ws-patterns { padding:110px 0; border-top:1px solid var(--border); }
+.ws-pattern-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:56px; }
+.ws-pattern { background:var(--dark); padding:40px 36px; position:relative; overflow:hidden; }
+.ws-pattern::after { content:''; position:absolute; top:0; left:0; height:2px; width:100%; background:var(--green-light);
+  transform:scaleX(0); transform-origin:left; transition:transform 0.45s cubic-bezier(0.22,1,0.36,1); }
+.ws-pattern:hover::after { transform:scaleX(1); }
+.ws-pattern .n { font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.2em; color:var(--green-light); display:block; margin-bottom:16px; }
+.ws-pattern h3 { font-size:1.55rem; margin-bottom:10px; }
+.ws-pattern p { font-size:0.9rem; line-height:1.75; font-weight:300; }
+
+/* How I work */
+.ws-how { padding:110px 0; border-top:1px solid var(--border); }
+.ws-how-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
+.ws-how-grid .section-title { position:sticky; top:120px; }
+.ws-how-item { padding:28px 0; border-bottom:1px solid var(--border); }
+.ws-how-item:first-child { padding-top:0; }
+.ws-how-item h3 { font-size:1.45rem; margin-bottom:8px; }
+.ws-how-item p { font-size:0.92rem; line-height:1.75; font-weight:300; }
+
+/* Signature */
+.ws-sign { max-width:680px; margin:70px auto 0; padding-top:40px; border-top:1px solid var(--border); }
+.ws-sign .name { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; color:var(--white); letter-spacing:0.06em; }
+.ws-sign .role { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:#666; font-weight:600; margin-top:6px; }
+
+/* CTA */
+.ws-cta { padding:110px 0; border-top:1px solid var(--border); text-align:center; }
+.ws-cta-inner { max-width:720px; margin:0 auto; padding:0 24px; }
+.ws-cta p { font-size:1rem; line-height:1.85; font-weight:300; margin:22px auto 36px; max-width:560px; }
+.ws-cta p strong { color:var(--white); font-weight:600; }
+.ws-cta-actions { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.ws-cta-direct { margin-top:34px; font-size:0.85rem; color:#777; }
+.ws-cta-direct a { color:var(--green-light); text-decoration:none; }
+
+
+/* Founder photo */
+.ws-photo { float:right; width:min(300px,42%); margin:6px 0 22px 36px; }
+.ws-photo img { display:block; width:100%; height:auto; border:1px solid var(--border);
+  filter:grayscale(1) contrast(1.05); }
+.ws-photo figcaption { font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+  color:#666; font-weight:600; margin-top:10px; border-left:2px solid var(--green); padding-left:10px; }
+@media (max-width:640px) { .ws-photo { float:none; width:100%; margin:0 0 28px; } }
+
+@media (max-width:1024px) {
+  .ws-how-grid { grid-template-columns:1fr; gap:40px; }
+  .ws-how-grid .section-title { position:static; }
+}
+@media (max-width:768px) {
+  .ws-hero-inner { padding:70px 20px 50px; }
+  .ws-pattern-grid { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .ws-pattern::after { transition:none; } }
+</style>
+</head>
+<body>
+
+<!-- NAV (shared) -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-horizontal.png" alt="Sitework" class="nav-logo-img" width="200" height="40">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="why-sitework.html">Why Sitework</a>
+      <a href="resources.html">Resources</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#services" onclick="closeMobile()">Services</a>
+    <a href="index.html#approach" onclick="closeMobile()">Approach</a>
+    <a href="why-sitework.html" onclick="closeMobile()">Why Sitework</a>
+    <a href="resources.html" onclick="closeMobile()">Resources</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="index.html#contact" onclick="closeMobile()" class="mobile-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="ws-hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+  </div>
+  <div class="ws-hero-inner">
+    <div class="ws-eyebrow">Why Sitework</div>
+    <h1 class="ws-h1">The best contractor in town shouldn't be <em>the best-kept secret.</em></h1>
+    <p class="ws-hero-sub">
+      I spent ten-plus years inside the software platforms that run the trades — the tools contractors use to schedule jobs,
+      run crews, and win bids. <strong>Thousands of companies, residential and commercial, the great and the grinding.</strong>
+      Sitework is everything I learned about who wins, built into a system you can hire.
+    </p>
+  </div>
+</section>
+
+<!-- THE STORY -->
+<section class="ws-story">
+  <div class="container">
+    <div class="ws-prose">
+      <div class="section-label">The Story</div>
+      <h2>Ten years of watching who wins. And why.</h2>
+      <figure class="ws-photo">
+        <img src="carter.jpg" alt="Carter, founder of Sitework" width="800" height="800" loading="lazy"
+             onerror="this.closest('.ws-photo').style.display='none'">
+        <figcaption>Carter · Founder, Sitework · Austin, TX</figcaption>
+      </figure>
+      <p>For over a decade, my job put me shoulder-to-shoulder with the trades — thousands of contractors, from one-truck shops to multi-million-dollar operations, residential service companies to commercial outfits chasing bids. <!-- SWAP POINT: if you decide to name employers, this is the sentence — e.g. "first at Housecall Pro, working with thousands of home service companies, then in commercial construction at PlanHub." --> I wasn't watching from a marketing office somewhere. I was inside their businesses: how they scheduled, how they quoted, how they got paid, and — the part that stuck with me — how they got found. Or didn't.</p>
+      <p>Because here's what a decade of that teaches you: <strong>the gap between the companies winning work and the companies grinding for it usually isn't the work itself.</strong> I watched genuinely great operators — better techs, better service, better people — sit invisible while a louder competitor with average work grew right past them. And I watched companies go from good in the field to truly <em>great</em> — recognized, booked out, charging what they're worth — and the difference was almost never a secret. It was a pattern. The winners did the same handful of things, over and over, in every market and every trade.</p>
+      <div class="ws-aside">"The winners weren't doing magic. They were doing a playbook. Most companies just never get handed the playbook."</div>
+      <p>At some point the conclusion got too loud to ignore: somebody should just <em>run that playbook</em> for the companies too busy doing the actual work. So I built Sitework to do exactly that. No reinventing, no agency theater, no metrics nobody understands — the same patterns I watched separate the winners, applied to your company, managed month after month. I started this on my own, I'm building it up the same way you built your business, and I genuinely love the work. There aren't many things more satisfying than watching a great company finally get seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIG PULL -->
+<div class="ws-pull">
+  <div class="container">
+    <div class="q">DO IT RIGHT, <em>OR DO IT TWICE.</em></div>
+    <div class="a">The rule on every job site. Same rule applies to your website.</div>
+  </div>
+</div>
+
+<!-- THE BELIEF -->
+<section class="ws-story" style="border-top:none;padding-top:0;">
+  <div class="container">
+    <div class="ws-prose">
+      <div class="section-label">What I Believe</div>
+      <h2>You're the expert. Act like it — and hire like it.</h2>
+      <p>Trades owners are some of the hardest-working people in this country, full stop. <strong>Eighty-hour weeks, callbacks at dinner, payroll on your mind at 2am</strong> — and on top of all that, somehow the work is still excellent. That deserves to be recognized. Not with a participation trophy — with a market position that matches the quality of the company. More of the right calls, better customers, real prices.</p>
+      <p>And here's the part I'll say plainly, because you'd say it to me: in a world full of DIY, <strong>you are the expert at the toilet, the heater, the AC, the roof.</strong> When my water heater goes, I don't watch three videos and grab a wrench — I call a pro, because doing it wrong costs twice as much as doing it right. Your website is the same job in reverse. You <em>can</em> spend your Sundays fighting a website builder. Then you'll spend twice as much getting it done right. Do it right, or do it twice — your rule, not mine.</p>
+      <p>So that's the deal Sitework offers: you stay the expert at your trade. I'll be the expert at making sure everyone in your market knows it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE PATTERNS -->
+<section class="ws-patterns">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">The Playbook</div>
+      <h2 class="section-title">What the winning companies all had in common.</h2>
+    </div>
+    <div class="ws-pattern-grid">
+      <div class="ws-pattern">
+        <span class="n">PATTERN 01</span>
+        <h3>They were easy to find</h3>
+        <p>Top of the map pack, dedicated pages for every service, showing up for the exact searches their customers typed. Visibility wasn't luck — it was maintained, weekly, like equipment.</p>
+      </div>
+      <div class="ws-pattern">
+        <span class="n">PATTERN 02</span>
+        <h3>They looked as good as their work</h3>
+        <p>Their online presence matched the quality of the company. A homeowner deciding in three seconds saw professionalism, not a site from 2011 — and three seconds is all you get.</p>
+      </div>
+      <div class="ws-pattern">
+        <span class="n">PATTERN 03</span>
+        <h3>Their reputation worked for them</h3>
+        <p>Reviews flowed in steadily and got put to work — pulled forward, responded to, visible everywhere a customer looked. The work earned the praise; the system made sure it counted.</p>
+      </div>
+      <div class="ws-pattern">
+        <span class="n">PATTERN 04</span>
+        <h3>They never stopped</h3>
+        <p>The losers built a website once and walked away. The winners treated their presence like a fleet — maintained, updated, improved. Month after month, they got harder to catch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section class="ws-how">
+  <div class="container">
+    <div class="ws-how-grid">
+      <div>
+        <div class="section-label">How I Work</div>
+        <h2 class="section-title">Hard but fair. Mostly listening.</h2>
+      </div>
+      <div>
+        <div class="ws-how-item">
+          <h3>You talk to me. Period.</h3>
+          <p>No account managers, no ticket queues, no "let me check with the team." The person who built your site, runs your SEO, and answers your call are the same person. Me.</p>
+        </div>
+        <div class="ws-how-item">
+          <h3>I listen twice as much as I talk</h3>
+          <p>You know your business, your market, and your customers better than any marketer ever will. My job starts with shutting up and learning your business — then applying the playbook to <em>it</em>, not some template of it.</p>
+        </div>
+        <div class="ws-how-item">
+          <h3>I'll tell you the truth, even when it's not the sale</h3>
+          <p>If your current site is worth keeping, I'll say so. If something won't move the needle, you won't be paying me for it. Hard but fair — the same way you'd want your own customers treated.</p>
+        </div>
+        <div class="ws-how-item">
+          <h3>The demo does the talking</h3>
+          <p>I build your demo site before we ever speak. You judge real work, not promises — the same way your customers judge you by the finished job, not the pitch.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="ws-sign">
+        <div class="name">— CARTER</div>
+        <div class="role">Founder, Sitework · Austin, Texas · Working with the trades nationwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ws-cta">
+  <div class="ws-cta-inner">
+    <div class="section-label">Let's Talk</div>
+    <h2 class="section-title">You've read my story. I'd rather hear yours.</h2>
+    <p>Tell me your company name and your city, and I'll build you a working demo site — free, before we ever talk. <strong>If you like what you see, we go from there. If not, you've lost nothing</strong> and you'll still get an honest read on your market.</p>
+    <div class="ws-cta-actions">
+      <a href="index.html#contact" class="btn-primary">Get Your Free Demo Site</a>
+      <a href="index.html#services" class="btn-ghost">See What We Do</a>
+    </div>
+    <p class="ws-cta-direct">Or skip the form entirely: <a href="tel:+17038198946">703.819.8946</a> · <a href="mailto:carter@sitework.build">carter@sitework.build</a> — it's me who answers.</p>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="Boxlogo-white.png" alt="Sitework" class="footer-logo-img" width="32" height="32">
+          <span>SITEWORK</span>
+        </div>
+        <p>Visibility. Trust. Growth.</p>
+        <p class="footer-desc">Helping hardworking businesses become the obvious choice in their market.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="index.html#services">Web Design</a>
+          <a href="index.html#services">Local SEO</a>
+          <a href="index.html#services">Google Business Profile</a>
+          <a href="index.html#services">Reputation Management</a>
+          <a href="index.html#services">Growth Strategy</a>
+          <a href="index.html#services">Consulting &amp; Coaching</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#approach">Our Approach</a>
+          <a href="why-sitework.html">Why Sitework</a>
+          <a href="resources.html">Resources</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Trades We Serve</h5>
+          <a href="hvac-website-design.html">HVAC</a>
+          <a href="plumber-website-design.html">Plumbing</a>
+          <a href="electrician-website-design.html">Electrical</a>
+          <a href="roofing-website-design.html">Roofing</a>
+          <a href="construction-website-design.html">Construction</a>
+          <a href="home-services-website-design.html">Home Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <p>© 2026 Sitework. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="tel:+17038198946">703.819.8946</a>
+        <a href="mailto:carter@sitework.build">carter@sitework.build</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function () {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.ws-pattern, .ws-how-item, .section-header, .ws-pull, .ws-prose, .ws-sign')
+    .forEach(el => { el.classList.add('fade-up'); obs.observe(el); });
+});
+</script>
+</body>
+</html>
