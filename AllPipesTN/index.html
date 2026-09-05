@@ -292,6 +292,22 @@
     #toTop{bottom:74px!important}
   }
   @media(prefers-reduced-motion:reduce){.mcta{transition:none}}
+
+  /* current specials / coupons */
+  .specials{background:var(--mist)}
+  .coupon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+  .coupon{background:#fff;border:2px dashed #E7C4A6;border-radius:16px;padding:34px 26px 28px;text-align:center;position:relative;transition:.22s;display:flex;flex-direction:column;align-items:center}
+  .coupon:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+  .coupon .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:100px;white-space:nowrap}
+  .coupon .amt{font-size:56px;font-weight:800;color:var(--accent);letter-spacing:-.03em;line-height:1;margin-top:8px}
+  .coupon .amt span{font-size:20px;font-weight:700;color:var(--ink);margin-left:4px}
+  .coupon .ct{font-size:18px;font-weight:800;margin:10px 0 6px}
+  .coupon .cd{font-size:14px;color:var(--gray);margin-bottom:20px;min-height:20px}
+  .coupon .btn{width:100%}
+  .coupon .cl{font-size:13px;color:var(--gray);font-weight:600;margin-top:11px}
+  .coupon .cl:hover{color:var(--accent)}
+  .specials .fine{text-align:center;color:var(--gray-2);font-size:12.5px;margin-top:26px}
+  @media(max-width:900px){.coupon-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Plumber","name":"All Pipes Plumbing","telephone":"+16152525461","email":"info@allpipestn.com","url":"https://www.allpipestn.com/","image":"assets/owners.webp","address":{"@type":"PostalAddress","addressLocality":"Nashville","addressRegion":"TN","addressCountry":"US"},"areaServed":["Nashville, TN","East Nashville, TN","Madison, TN","Mt. Juliet, TN","Brentwood, TN","Franklin, TN","Murfreesboro, TN","Hendersonville, TN","Goodlettsville, TN","Gallatin, TN"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"9"},"openingHours":"Mo-Sa 08:00-17:00"}</script><link rel="canonical" href="https://www.allpipestn.com/index.html"></head>
 <body>
@@ -367,7 +383,7 @@
       <div class="svc reveal"><div class="ph"><img src="assets/pvc.webp" alt="Plumbing service and repair"></div><div class="b"><h3>Service &amp; Repairs</h3><p>Honest diagnosis and lasting fixes for leaks, fixtures and everyday plumbing trouble.</p><a class="call" href="tel:6152525461">Call (615) 252-5461</a></div></div>
     </div>
   </div>
-</section>
+</section><section class="pad specials" id="specials"><div class="wrap"><div class="head center reveal"><span class="kicker">Current Specials</span><h2>Save on your next service</h2><p>Book online or call and mention your offer. Our way of taking care of Nashville neighbors.</p></div><div class="coupon-grid"><div class="coupon reveal"><span class="tag">New customers</span><div class="amt">$30<span>OFF</span></div><div class="ct">Your first service call</div><div class="cd">Welcome to All Pipes.</div><button class="hcp-button btn btn-accent" onclick="typeof HCPWidget!=='undefined'?HCPWidget.openModal():location.href='tel:6152525461'">Book Online</button><a href="tel:6152525461" class="cl">or call (615) 252-5461</a></div><div class="coupon reveal"><span class="tag">Repairs</span><div class="amt">$50<span>OFF</span></div><div class="ct">Any repair over $500</div><div class="cd">On qualifying repair work.</div><button class="hcp-button btn btn-accent" onclick="typeof HCPWidget!=='undefined'?HCPWidget.openModal():location.href='tel:6152525461'">Book Online</button><a href="tel:6152525461" class="cl">or call (615) 252-5461</a></div><div class="coupon reveal"><span class="tag">Water heaters</span><div class="amt">$100<span>OFF</span></div><div class="ct">A water heater replacement</div><div class="cd">Tank or tankless install.</div><button class="hcp-button btn btn-accent" onclick="typeof HCPWidget!=='undefined'?HCPWidget.openModal():location.href='tel:6152525461'">Book Online</button><a href="tel:6152525461" class="cl">or call (615) 252-5461</a></div></div><p class="fine">Mention your offer when you book. One per customer. Cannot be combined with other offers.</p></div></section>
 <section class="pad" id="about">
   <div class="wrap about-grid about">
     <div class="about-photo reveal"><img src="assets/owners.webp" alt="Jay and Robert, owners of All Pipes Plumbing"></div>
